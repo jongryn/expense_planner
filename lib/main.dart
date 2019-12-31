@@ -12,9 +12,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PolarPro Filters App',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
-        accentColor: Color(0xffc99e1a),
-      ),
+          primarySwatch: Colors.grey,
+          accentColor: Color(0xffc99e1a),
+          fontFamily: 'Avenir',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  title: TextStyle(
+                    fontFamily: 'Avenir',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          )),
       home: MyHomePage(),
     );
   }
@@ -29,18 +45,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'Summit | Landscape Filter Sy...',
-      amount: 699.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Basecamp | Ultralight Matte Box',
-      amount: 699.99,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'Summit | Landscape...',
+    //   amount: 699.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Basecamp | Ultralight...',
+    //   amount: 699.99,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
